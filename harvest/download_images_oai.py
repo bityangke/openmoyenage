@@ -19,6 +19,14 @@ def make_filelist(input_dir, output_dir, dc_type, ext):
             filename = xmlname + '_' + recordid.replace(':', '__') + '.' + ext
             yield (recordurl.firstChild.data, os.path.join(output_dir, filename))
 
+
+def download_image(url_path):
+    try:
+        urllib.request.urlretrieve(*url_path)
+    except urllib.error.HTTPError as err:
+        print(f"warning: http error on {url_path}: {err}", file=sys.stderr)
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', required = True)
 parser.add_argument('-o', required = True)
@@ -34,5 +42,5 @@ if not os.path.exists(args.o):
     os.makedirs(args.o)
 
 print('Downloading...')
-multiprocessing.dummy.Pool(args.threads).map(lambda url_path: urllib.request.urlretrieve(*url_path), filelist)
+multiprocessing.dummy.Pool(args.threads).map(download_image, filelist)
 print('Done')
