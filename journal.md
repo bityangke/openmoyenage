@@ -38,3 +38,4 @@ Extra: detection of multiple person sketches; good person pose parametrization.
 8. [Abstract art with ML](https://janhuenermann.com/blog/abstract-art-with-ml)
 9. [Deep Painterly Harmonization](https://arxiv.org/abs/1804.03189)
 10. [Image Inpainting for Irregular Holes Using Partial Convolutions](https://arxiv.org/abs/1804.07723)
+11. [Generative Visual Manipulation on the Natural Image Manifold](https://arxiv.org/abs/1609.03552)
