@@ -2,6 +2,13 @@
 Many of these challenges are variants of domain transfer problems. Target domain is always medieval illuminations. Source domain depends on the application.
 
 ## Applications
+
+### Large-scale tSNE to explore images first
+https://ai.googleblog.com/2018/06/realtime-tsne-visualizations-with.html
+
+### Face, person, horse extraction
+With off-the-shelf detectors
+
 ### Single photo restyling
 **Source domains:** face close-up photo; person photo.
 
