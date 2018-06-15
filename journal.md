@@ -40,3 +40,4 @@ Extra: detection of multiple person sketches; good person pose parametrization.
 8. [Image Inpainting for Irregular Holes Using Partial Convolutions](https://arxiv.org/abs/1804.07723)
 9. [QuaterNet: A Quaternion-based Recurrent Model for Human Motion](https://arxiv.org/abs/1805.06485)
 10. [Abstract art with ML](https://janhuenermann.com/blog/abstract-art-with-ml)
+11. [Synthesizing Images of Humans in Unseen Poses](https://arxiv.org/abs/1804.07739v1)
