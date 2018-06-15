@@ -1,6 +1,6 @@
 ```shell
 
-# ssh kbox, /home/cvlab/vadim is our home
+# ssh kbox, /home/cvlab/vadim is our home, password is vadim0317
 alias sshkbox='ssh cvlab@141.223.163.143 -p 22365 "cd vadim ; bash"'
 
 # add conda binaries to PATH
