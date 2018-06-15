@@ -5,6 +5,7 @@ Many of these challenges are variants of domain transfer problems. Target domain
 
 ### Large-scale tSNE to explore images first
 https://ai.googleblog.com/2018/06/realtime-tsne-visualizations-with.html
+https://github.com/lmcinnes/umap
 
 ### Face, person, horse extraction
 With off-the-shelf detectors
