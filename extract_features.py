@@ -6,6 +6,7 @@ import torch.nn.functional as F
 import torchvision
 
 model = torchvision.models.vgg16(pretrained = True).features
+model.eval()
 model.cuda()
 
 features = []
