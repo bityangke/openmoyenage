@@ -7,6 +7,7 @@ import torch.nn.functional as F
 import torchvision
 
 model = torchvision.models.vgg16(pretrained = True).features
+model.cuda()
 
 features = []
 filenames = os.listdir(sys.argv[1])
