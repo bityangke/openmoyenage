@@ -15,7 +15,7 @@ for filename in filenames:
 	img = torch.as_tensor(cv2.imread(os.path.join(sys.argv[1], filename))).float().cuda()
 	img = (img - torch.tensor([0.485, 0.456, 0.406]).type_as(batch)) / torch.tensor([0.229, 0.224, 0.225]).type_as(batch)
 	img = img[None, None, ...].transpose(1, -1).squeeze(-1)
-	img = F.upsample(img, (640, 480))
+	img = F.upsample(img, (480, 640), mode = 'bilinear')
 	output = model(img)
 	features.append(output.view(output.size(1), -1).mean(-1))
 	
