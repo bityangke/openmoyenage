@@ -48,6 +48,8 @@ vUnHC3wvrFOKQRZlSmXuTn1xeO1NXonBuINE0zEo9LgX17aAJPvm+Q==
 
 ```shell
 ssh gigantic.paris.inria.fr
+cd /media/sdb/kantorov
+source raclette.sh
 ```
 
 
