@@ -47,7 +47,7 @@ vUnHC3wvrFOKQRZlSmXuTn1xeO1NXonBuINE0zEo9LgX17aAJPvm+Q==
 ```
 
 ```shell
-ssh gigantic.paris.inria.fr
+ssh kantorov@gigantic.paris.inria.fr # voxpuibr123
 cd /media/sdb/kantorov
 source raclette.sh
 ```
