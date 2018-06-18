@@ -2,20 +2,21 @@ Put in local `~/.ssh/config`:
 ```
 # Proxy SSH
 Host ssh-roc
-   HostName ssh-roc.inria.fr
-   ProxyCommand none
+  HostName ssh-roc.inria.fr
+  ProxyCommand none
 # Intranet
 Host *.inria.fr
-  ProxyCommand ssh -q ssh-roc /usr/bin/nc -w 1 %h 22
-# Defaults (Internet)
+  ProxyCommand ssh -q kantorov@ssh-roc /usr/bin/nc -w 1 %h 22
+```
+
+Your `Host *` in `~/.ssh/config` might look different but mine is just this:
+```
 Host *
   Protocol 2,1
   ForwardAgent yes
-  ForwardX11 yes
-  User kantorov
 ```
 
-`id_rsa`:
+Save this key to your, for example, `~/.ssh/inria_id_rsa` and call `ssh-add ~/.ssh/inria_id_rsa` (don't forget `chmod 600`):
 ```
 -----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEAuTvhaTysN9R+ppix7oMF9cOekLXxnbwhory4D1J6r5ftj1oy
