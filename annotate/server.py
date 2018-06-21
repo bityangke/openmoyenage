@@ -105,6 +105,6 @@ def handle(filename):
 	if filename:
 		with open(os.path.join(args.db, filename), 'w') as f:
 			json.dump(flask.request.get_json(), f)
-	return random.choice(os.listdir(args.images))
+	return random.choice(list(set(os.listdir(args.images)) - set(os.listdir(args.db))) or ['DONE'])
 
 app.run()
