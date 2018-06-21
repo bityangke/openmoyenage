@@ -89,12 +89,14 @@ index = '''
 parser = argparse.ArgumentParser()
 parser.add_argument('--images', default = 'images')
 parser.add_argument('--db', default = 'db')
+parser.add_argument('--seed', default = time.time(), type = int)
 args = parser.parse_args()
+
 for dir in [args.images, args.db]:
 	if not os.path.exists(dir):
 		os.makedirs(dir)
+random.seed(args.seed)
 
-random.seed(time.time())
 app = flask.Flask(__name__, static_url_path = '')
 
 @app.route('/', defaults = dict(filename = None), methods = ['GET', 'POST'])
