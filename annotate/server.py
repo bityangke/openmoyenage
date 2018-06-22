@@ -27,8 +27,8 @@ index = '''
 					.post({ url : '/' + imagename, contentType : 'application/json', data : JSON.stringify(boxes) })
 					.done(function(imagename_new) {
 						$('image').attr('href', '/' + imagename_new);
-						$('svg circle:not([style=display\\:none])').remove();
-						$('svg rect:not([style=display\\:none])').remove();
+						$('svg circle:not([style=display\\\\:none])').remove();
+						$('svg rect:not([style=display\\\\:none])').remove();
 						boxes = [];
 						imagename = imagename_new;
 					}); 
@@ -44,9 +44,9 @@ index = '''
 				box.push(cy);
 
 				var color = 'hsl(' + (360.0 * (boxes.length % 8) / 8) + ', 50%, 50%)';
-				$('svg').append($('svg circle[style=display\\:none]').clone().removeAttr('style').attr("cx", cx).attr("cy", cy).attr("fill", color));
+				$('svg').append($('svg circle[style=display\\\\:none]').clone().removeAttr('style').attr("cx", cx).attr("cy", cy).attr("fill", color));
 				if(box.length == 4)
-					$('svg').append($('svg rect[style=display\\:none]').clone().removeAttr('style').attr("x", box[0]).attr("y", box[1]).attr("fill", color).attr("width", box[2] - box[0]).attr("height", box[3] - box[1]));
+					$('svg').append($('svg rect[style=display\\\\:none]').clone().removeAttr('style').attr("x", box[0]).attr("y", box[1]).attr("fill", color).attr("width", box[2] - box[0]).attr("height", box[3] - box[1]));
 			}
 
 			function remove()
