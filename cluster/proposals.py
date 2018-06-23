@@ -23,7 +23,6 @@ if args.method == 'selectivesearch':
 	prop.setBaseImage(img)
 	prop.switchToSelectiveSearchQuality()
 	rects = prop.process()
-	rects = rects[(rects[:, 2] > 20) & (rects[:, 3] > 20)]
 elif args.method == 'edgeboxes':
 	edge_detection = cv2.ximgproc.createStructuredEdgeDetection('model.yml.gz')
 	edges = edge_detection.detectEdges(cv2.cvtColor(img, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0)
@@ -38,6 +37,8 @@ elif args.method == 'bing':
 	rects = saliency.computeSaliency(img)[1].squeeze(1)
 	rects[:, 2] = rects[:, 2] - rects[:, 0]
 	rects[:, 3] = rects[:, 3] - rects[:, 1]
+
+rects = rects[(rects[:, 2] > 20) & (rects[:, 3] > 20)]
 
 if args.vis:
 	jmg = img.copy()
