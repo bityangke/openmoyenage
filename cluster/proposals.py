@@ -7,7 +7,7 @@ import cv2.saliency
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', required = True)
 parser.add_argument('-o', required = True)
-parser.add_argument('-k', default = 128, type = int)
+parser.add_argument('-k', default = 2048, type = int)
 parser.add_argument('--method', choices = ['selectivesearch', 'edgeboxes', 'bing'], default = 'edgeboxes')
 parser.add_argument('--threads', default = 8, type = int)
 parser.add_argument('--vis', action = 'store_true')
@@ -46,4 +46,4 @@ if args.vis:
 		cv2.rectangle(jmg, (x, y), (x+w, y+h), (0, 255, 0), 1, cv2.LINE_AA)
 	cv2.imwrite(args.o, jmg)
 else:
-	np.savetxt(args.o, rects[:1024], fmt = '%.0f')
+	np.savetxt(args.o, rects[:args.k], fmt = '%.0f')
