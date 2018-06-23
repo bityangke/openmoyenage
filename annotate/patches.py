@@ -8,6 +8,8 @@ parser.add_argument('--db', default = 'db')
 parser.add_argument('--images', default = 'images')
 parser.add_argument('--patches', default = 'patches')
 args = parser.parse_args()
+if not os.path.exists(args.patches):
+	os.makedirs(args.patches)
 
 for filename in os.listdir(args.db):
 	boxes = json.loads(open(os.path.join(args.db, filename)).read())
